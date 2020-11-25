@@ -1,46 +1,19 @@
-licensePlate = input("Enter the license plate:\t")
-  
-if len(licensePlate) == 6:  
-    for thing in licensePlate[:3]:
-      if thing.isalpha() and thing.isupper():
-        string += thing
-    
-    
-elif thing.isnumeric():
-        string += thing
-  
-  if string == licensePlate:
-    status = 'older'
-    
-  string = ''
-  
-  if len(licensePlate) == 7:  
-    for thing in licensePlate[:4]:
-      if thing.isnumeric():
-        string += thing
-    
-    for thing in licensePlate[4:]:
-      if thing.isalpha() and thing.isupper():
-        string += thing
-      
-  if string == licensePlate:
-    status = 'newer'
-    
-  try:
-    status
-    
-  except NameError:
-    status = ''
-    
-  if status == 'older':
-    print("This license plate is valid for an older style license plate.")
-    
-  elif status == 'newer':
-    print("This license plate is valid for a newer style license plate.")
-    
-  elif status == '':
-    print("This license plate is not valid for an older or newer style license plate.")
-    
-  blah = input("Press enter to continue:\t")
-  
-  print()
+plate = input("Enter a string of characters: ")
+
+if len(plate) == 6 and plate[0] >= "A"  and plate [0] <= "Z" and \
+  plate[1] >= "A" and plate[1] <= "Z" and \
+  plate[2] >= "A" and plate[2] <= "Z" and \
+  plate[3] >= "0" and plate[3] <= "9" and \
+  plate[4] >= "0" and plate[4] <= "9" and \
+  plate[5] >= "0" and plate[5] <= "9":
+  print("The licence plate is older and not valid.")
+elif len(plate) == 7 and plate[0] >= "0" and plate[0]<= "9" and\
+  plate[1] >= "0" and plate[1] <= "9" and \
+  plate[2] >= "0" and plate[2] <= "9" and \
+  plate[3] >= "0" and plate[3] <= "9" and \
+  plate[4] >= "A" and plate[4] <= "Z" and \
+  plate[5] >= "A" and plate[5] <= "Z" and \
+  plate[6] >= "A" and plate[6] <= "Z":
+    print("The license plate is the newest and valid.")
+else:
+  print("This is not a valid parameter.")

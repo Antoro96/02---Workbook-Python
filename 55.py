@@ -1,29 +1,26 @@
-MICROWAVE = 3 * 10 ** 9
-INFRARED = 3 * 10 ** 12
-VISIBLE = 4.3 * 10 ** 14
-ULTRAVIOLET = 7.5 * 10 ** 14
-X = 3 * 10 ** 17
-GAMMA = 3 * 10 ** 19
+RADIO_WAVES = 3e9
+MICRO_WAVES = 3e12
+INFRARED_LIGHT = 4.3e14
+VISIBLE_LIGHT = 7.5e14
+ULTRAVIOLET_LIGHT = 3e17
+X_RAYS = 3e19
+GAMMA_RAYS = []
 
-frequency = int(input("Enter the frequency of the radiation: "))
+FREQUENCY = "The frequency is %s"
 
-if frequency < MICROWAVE:
-  print("Radio Waves\n")
+frequency = float(input("Enter a value of frequency: "))
 
-elif MICROWAVE <= frequency < INFRARED:
-  print("Microwaves\n")
-
-elif INFRARED <= frequency < VISIBLE:
-  print("Infrared Light\n")
-
-elif VISIBLE <= frequency < ULTRAVIOLET:
-  print("Visible Light\n")
-
-elif ULTRAVIOLET <= frequency < X:
-  print("Ultraviolet Light\n")
-  
-elif X <= frequency < GAMMA:
-  print("X-rays\n")
-  
-elif frequency >= GAMMA:
-  print("Gamma Rays\n")
+if frequency < RADIO_WAVES:
+  print(FREQUENCY %("Radio Waves.")) 
+elif RADIO_WAVES <= frequency < MICRO_WAVES:
+  print(FREQUENCY %("Micro waves."))
+elif MICRO_WAVES <= frequency < INFRARED_LIGHT:
+  print(FREQUENCY %("Infrared light"))
+elif INFRARED_LIGHT <= frequency < VISIBLE_LIGHT:
+  print(FREQUENCY %("Visible light."))
+elif VISIBLE_LIGHT <= frequency < ULTRAVIOLET_LIGHT:
+  print(FREQUENCY %("Ultraviolet light."))
+elif ULTRAVIOLET_LIGHT <= frequency < X_RAYS:
+  print(FREQUENCY %("X rays."))
+else:
+  print(FREQUENCY %("Gamma Rays."))
